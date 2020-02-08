@@ -1,0 +1,29 @@
+{{ $links := .Site.Params.links }}
+
+<section class="row td-box td-box--4 td-box--gradient td-box--height-auto linkbox">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<h2>使用和联系</h2>		
+<p>想引用或参考 {{ .Site.Title }}? 不用担心，我们只保留版权，其它请随意使用。
+{{ with index $links "user"}}
+{{ template "community-links-list"  . }}
+{{ end }}
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+<h2>编辑和贡献</h2>
+<p>如果想一起更新 {{ .Site.Title }}, 可以 fork 然后提交 PR。
+{{ with index $links "developer"}}
+{{ template "community-links-list"  . }}
+{{ end }}
+</div>
+</section>
+
+{{ define "community-links-list" }}
+<ul>
+ {{ range . }}
+ <li title="{{ .name }}">
+   <a target="_blank" href="{{ .url }}"><i class="{{ .icon }}"></i> {{ .name }}:</a> {{ .desc }}
+ </li>
+  {{ end }}
+</ul>
+{{ end }}
