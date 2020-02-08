@@ -22,7 +22,7 @@ ssh-agent bash -c "ssh-add /root/.ssh/id_historcn;
                     git remote add origin git@github.com:historcn/historcn.github.io.git;
                     git add .; 
                     git commit -m $MSG; 
-                    git push -u origin master"
+                    git push -u origin master --foce"
 
 cd .. && rm -rf docs
 ssh-agent bash -c "ssh-add /root/.ssh/id_historcn; 
