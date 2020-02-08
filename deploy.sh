@@ -7,15 +7,15 @@ if [[ -z $1 ]]; then
   exit 1
 fi 
 
-[[ -z $1 ]] && echo "Missing commit message" && exit 1
+[[ -z $@ ]] && echo "Missing commit message" && exit 1
 
 
-MSG="$1"
+MSG="$@"
 HUGO_ENV="production"
 rm -rf docs
 hugo --gc -d docs || exit 1
 
-cd docs
+cd docs && scp ../README.md ./
 # Use another ssh key file
 ssh-agent bash -c "ssh-add /root/.ssh/id_historcn; 
                     git init;
