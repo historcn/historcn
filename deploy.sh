@@ -24,8 +24,7 @@ ssh-agent bash -c "ssh-add /root/.ssh/id_historcn;
                     git commit -m $MSG; 
                     git push -u origin master"
 
-cd ..
-rm -rf docs
+cd .. && rm -rf docs
 ssh-agent bash -c "ssh-add /root/.ssh/id_historcn; 
                     git add .; 
                     git commit -m $MSG; 
