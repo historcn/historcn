@@ -3,7 +3,7 @@ date: 2019-01-01
 title: "2019年"
 linkTitle: "2019"
 description: "2019年度千夫所指的人物和事件"
-# author: [@Historic](https://github.com/historcn/historic/graphs/contributors))
+# author: [@Historcn](https://github.com/historcn/historcn/graphs/contributors))
 # resources:
 # - src: "**.{png,jpg}"
 #   title: "Image #:counter"
