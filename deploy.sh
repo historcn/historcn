@@ -15,6 +15,8 @@ hugo --gc -d docs || exit 1
 cd docs && scp ../README.md ./
 # Use another ssh key file
 ssh-agent bash -c "ssh-add ~/.ssh/id_historcn; 
+                    git config user.name "Historcn";
+                    git config user.name "historcn@gmail.com";
                     git init;
                     git remote add origin git@github.com:historcn/historcn.github.io.git;
                     git add .; 
@@ -23,6 +25,8 @@ ssh-agent bash -c "ssh-add ~/.ssh/id_historcn;
 
 cd .. && rm -rf docs
 ssh-agent bash -c "ssh-add ~/.ssh/id_historcn; 
+                    git config user.name "Historcn";
+                    git config user.name "historcn@gmail.com";
                     git add .; 
                     git commit -m '$MSG'; 
                     git push -u origin master"
